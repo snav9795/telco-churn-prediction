@@ -31,9 +31,13 @@ If this folder is **not** yet a Git repository:
 
 ```powershell
 git init
+git config user.name "Your Name"
+git config user.email "your.email@example.com"
 git add .
 git commit -m "Initial commit: full capstone workspace"
 ```
+
+*(This repo may already have an initial commit. If `git init` says the folder is already a repository, skip `git init` and only set `user.name` / `user.email` if Git reports “Author identity unknown”.)*
 
 Rename branch to `main` if needed:
 
