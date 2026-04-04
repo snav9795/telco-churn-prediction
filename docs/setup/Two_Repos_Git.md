@@ -6,6 +6,24 @@ Use **one** Git working copy at the capstone workspace root. Push the full tree 
 
 ## Step 1 — Create both repositories on GitHub
 
+### Option A — GitHub CLI (after `gh auth login`)
+
+Create the **public** grading repo in one command (empty, no README):
+
+```powershell
+gh repo create telco-churn-prediction --public --description "CS5998 capstone: telco churn (grading)"
+```
+
+Or create and publish in one step from the workspace root:
+
+```powershell
+.\scripts\Publish-PublicChurnRepo.ps1 -CreatePublicRepo
+```
+
+*(If the name is already taken, pick another name and run `git remote set-url public https://github.com/YOUR_USER/NEW_NAME.git`.)*
+
+### Option B — Web UI
+
 1. Sign in at [https://github.com/new](https://github.com/new).
 2. **Repo A (private)**  
    - Name: e.g. `cs5998-capstone-workspace`  

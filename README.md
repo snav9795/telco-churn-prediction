@@ -29,4 +29,7 @@ If `docs/study/` does not contain the daily `.md` files, see [`docs/study/RESTOR
 
 ## Git: private workspace + public grading repo
 
-Push the **entire** workspace to a private GitHub repo and only `churn-prediction/` to a public repo using `git subtree`. Step-by-step commands: [`docs/setup/Two_Repos_Git.md`](docs/setup/Two_Repos_Git.md). After remotes exist, you can run [`scripts/Publish-PublicChurnRepo.ps1`](scripts/Publish-PublicChurnRepo.ps1) from the workspace root.
+- **Private (full workspace):** [`github.com/snav9795/CS5998---Capstone-Project`](https://github.com/snav9795/CS5998---Capstone-Project) — `git push origin main`
+- **Public (grading, `churn-prediction/` only):** intended remote [`github.com/snav9795/telco-churn-prediction`](https://github.com/snav9795/telco-churn-prediction) — create the empty public repo if needed, then from the workspace root run [`scripts/Publish-PublicChurnRepo.ps1`](scripts/Publish-PublicChurnRepo.ps1) or `.\scripts\Publish-PublicChurnRepo.ps1 -CreatePublicRepo` (uses `gh`).
+
+Full instructions: [`docs/setup/Two_Repos_Git.md`](docs/setup/Two_Repos_Git.md).
