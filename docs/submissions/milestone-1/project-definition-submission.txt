@@ -1,0 +1,29 @@
+# Submission 01 - Project Definition Document
+
+**Format:** Max 3 pages, fixed template.
+
+## Content Requirements
+The document must define:
+1.  **Problem statement**
+2.  **Data source(s)**
+3.  **Intended methods** (linked to program modules)
+4.  **Expected outputs**
+5.  **Key risks and assumptions**
+
+## Purpose
+Lock scope early and confirm feasibility.
+
+## Grading Rubric (100 Points Total)
+
+| Criteria | Poor | Adequate | Good | Excellent | Max Points |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Problem Statement Clarity & Real-World Relevance** | 4 pts | 8 pts | 12 pts | 16 pts | 16 |
+| **Scope Definition via Bounded Choices** | 4 pts | 8 pts | 12 pts | 16 pts | 16 |
+| **Data Source Description & Appropriateness** | 4 pts | 8 pts | 12 pts | 16 pts | 16 |
+| **Intended Methods & Technical Alignment** | 4 pts | 8 pts | 12 pts | 16 pts | 16 |
+| **End-to-End System or Analysis Vision** | 2.5 pts | 5 pts | 7.5 pts | 10 pts | 10 |
+| **Expected Outputs & Evaluation Plan** | 2.5 pts | 5 pts | 7.5 pts | 10 pts | 10 |
+| **Risk Identification & Assumptions** | 2 pts | 4 pts | 6 pts | 8 pts | 8 |
+| **Overall Feasibility & Professionalism** | 2 pts | 4 pts | 6 pts | 8 pts | 8 |
+
+*(Note: "Not Shown" receives 0 points for all categories)*

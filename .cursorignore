@@ -1,0 +1,3 @@
+# Ignore Excel and Word files (use .md versions instead)
+*.xlsx
+*.docx

@@ -1,0 +1,14 @@
+---
+description: Capstone comment and naming standards for Python in this repo
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Capstone code standards (summary)
+
+- **Comments:** Remove comments that only repeat the code or name. Keep at most one short line for non-obvious *why* or invariants that naming cannot carry.
+- **Naming:** Prefer descriptive classes, functions, and variables over comments. Conventional ML names (`X_train`, `y_val`, etc.) are fine.
+- **Docstrings:** If required by rubric, one line on public entry points; no heavy docstrings on trivial helpers unless the rubric demands them.
+- **Scope:** Do not edit `docs/study/`, `docs/course/`, `docs/submissions/`, or `churn-prediction/reports/` for “style cleanup” unless the user asks.
+
+For a full checklist and pre-push workflow, read [.cursor/skills/capstone-code-standards/SKILL.md](.cursor/skills/capstone-code-standards/SKILL.md).

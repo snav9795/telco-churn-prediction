@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+.env.*
+
+# Models and large artifacts (uncomment if you do not want them in git)
+# churn-prediction/models/*.pkl
+# churn-prediction/models/*.joblib

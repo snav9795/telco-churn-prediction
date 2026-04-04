@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Secrets (never commit)
+.env
+.env.*
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Large trained artifacts — uncomment if markers should pull models separately
+# models/*.pkl
+# models/*.joblib
+# models/*.cbm
+# models/*.json
