@@ -4,16 +4,16 @@ overview: Use one Git repository at the workspace root for your private “full 
 todos:
   - id: github-create
     content: Create private Repo A and public Repo B on GitHub (empty)
-    status: in_progress
+    status: completed
   - id: root-init
     content: git init at capstone root, commit all, remote origin → Repo A, push
-    status: pending
+    status: completed
   - id: public-remote
     content: Add `public` remote → Repo B; first publish via `git subtree split --prefix=churn-prediction` + push
-    status: pending
+    status: completed
   - id: churn-gitignore
     content: "Optional: add churn-prediction/.gitignore for models/secrets per course rules"
-    status: pending
+    status: completed
 isProject: false
 ---
 

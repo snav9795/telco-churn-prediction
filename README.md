@@ -16,10 +16,23 @@ This folder is the top level for coursework, the telco churn deliverable, and Cu
 
 ## Quick start (modeling work)
 
-```bash
+From the workspace root, work inside `churn-prediction/` and install dependencies.
+
+**Option A — reuse an existing venv (Windows)**  
+If you already have a shared environment at `%USERPROFILE%\envs\py_3_12` (Python 3.12.10, created with `python -m venv` from pyenv’s interpreter):
+
+```powershell
+cd churn-prediction
+& "$env:USERPROFILE\envs\py_3_12\Scripts\Activate.ps1"
+pip install -r requirements.txt
+```
+
+**Option B — new venv inside the repo**
+
+```powershell
 cd churn-prediction
 python -m venv venv
-venv\Scripts\activate
+.\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
