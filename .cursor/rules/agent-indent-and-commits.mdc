@@ -1,0 +1,33 @@
+---
+description: Agent workflow — run tabnanny/compileall on Python changes; use structured git commits
+alwaysApply: true
+---
+
+# Indent checks and commits
+
+## Python under `churn-prediction/`
+
+From the **workspace root**, before treating Python edits as done, run:
+
+```powershell
+python -m tabnanny churn-prediction
+python -m compileall -q churn-prediction
+```
+
+Fix any reported issues. Omit `-q` on `compileall` if file-by-file output helps.
+
+## Commit messages
+
+Use conventional-style messages:
+
+```text
+<type>(<scope>): <imperative summary under ~72 chars>
+
+- Optional detail bullets
+```
+
+Types: `feat`, `fix`, `docs`, `refactor`, `chore`, `test`. Prefer a small scope (`churn-prediction`, `readme`, etc.).
+
+When suggesting or writing commit text for the user, follow that shape.
+
+Full context: [AGENTS.md](AGENTS.md). Human-oriented copy also lives in [README.md](README.md) (*Check indentation & structured commits*).

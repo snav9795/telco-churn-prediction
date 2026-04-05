@@ -12,6 +12,7 @@ This folder is the top level for coursework, the telco churn deliverable, and Cu
 | [`docs/course/`](docs/course/) | Official course-facing reference (e.g. student guide) |
 | [`docs/study/`](docs/study/) | Optional 7-day study guides and concept sheets (see restore note inside if files are missing) |
 | [`docs/submissions/`](docs/submissions/) | Portal-style submissions (e.g. milestone 1 text exports) |
+| [`AGENTS.md`](AGENTS.md) | Instructions for AI assistants: Python indent/syntax checks before wrap-up, structured commit messages |
 | [`.cursor/`](.cursor/) | Editor skills and rules for this repo (safe to commit so collaborators share the same standards) |
 
 ## Quick start (modeling work)
@@ -34,6 +35,43 @@ cd churn-prediction
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+```
+
+## Check indentation & structured commits
+
+**AI assistants:** the same expectations are in [`AGENTS.md`](AGENTS.md) and the always-on Cursor rule [`.cursor/rules/agent-indent-and-commits.mdc`](.cursor/rules/agent-indent-and-commits.mdc).
+
+From the **workspace root** (any shell with `python` on `PATH`; use your venv if you prefer):
+
+**Python indentation and block structure** — stdlib only:
+
+```powershell
+python -m tabnanny churn-prediction
+python -m compileall -q churn-prediction
+```
+
+- `tabnanny` reports ambiguous or mixed tab/space indentation in `.py` files.
+- `compileall` fails on syntax errors (including `IndentationError`). Drop `-q` to see filenames as they compile.
+
+**Commit message** — use a clear, structured line (and optional body). Pattern:
+
+```text
+<type>(<scope>): <short imperative summary>
+
+- Bullet details if useful (what / why)
+```
+
+Common `<type>` values: `feat`, `fix`, `docs`, `refactor`, `chore`, `test`. Use a small `<scope>` when it helps (e.g. `churn-prediction`, `readme`).
+
+**One-shot commit from PowerShell** (message from a here-string; adjust `git add` as needed):
+
+```powershell
+git add -A
+@"
+feat(churn-prediction): train baseline model and save metrics
+
+- Add notebook run notes; no API change
+"@ | git commit -F -
 ```
 
 ## Study guides
