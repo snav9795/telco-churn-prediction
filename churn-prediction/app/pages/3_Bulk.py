@@ -10,7 +10,8 @@ from utils import CATEGORICAL_COLS, NUMERIC_COLS, load_artifacts
 st.set_page_config(page_title="Bulk Score · Churn", page_icon="📂", layout="wide")
 st.title("📂 Bulk Customer Scoring")
 
-preprocessor, lr, xgb = load_artifacts()
+with st.spinner("Loading model artifacts…"):
+    preprocessor, lr, xgb = load_artifacts()
 
 st.markdown(
     """
@@ -68,3 +69,6 @@ if uploaded is not None:
             file_name="churn_scores.csv",
             mime="text/csv",
         )
+
+st.divider()
+st.caption("CS5998 Capstone · Master of Data Science & AI")
