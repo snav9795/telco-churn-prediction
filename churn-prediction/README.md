@@ -2,6 +2,12 @@
 
 **CS5998 Capstone Project | Master of Data Science & Artificial Intelligence**
 
+## Live Demo
+
+> **[Launch the Streamlit app →](https://telco-churn-prediction.streamlit.app)**  
+> Hosted on [Streamlit Community Cloud](https://share.streamlit.io) from the public repo [`snav9795/telco-churn-prediction`](https://github.com/snav9795/telco-churn-prediction).  
+> *Free-tier apps sleep after inactivity — allow ~30 s for a cold start.*
+
 ## Project Overview
 
 This project implements an end-to-end machine learning pipeline to predict customer churn for a telecommunications company. The goal is to identify customers likely to cancel their service, enabling proactive retention strategies.
@@ -31,38 +37,65 @@ This directory is the **Python project** inside the capstone workspace. Course d
 
 ```
 churn-prediction/
+├── app/
+│   ├── Home.py                 # Streamlit entry point
+│   ├── utils.py                # Shared artifact loader
+│   └── pages/
+│       ├── 1_Predict.py        # Single-customer prediction + SHAP
+│       ├── 2_Dashboard.py      # Model comparison dashboard
+│       └── 3_Bulk.py           # Batch CSV scoring
 ├── data/
 │   ├── raw/                    # Original dataset
-│   └── processed/              # Cleaned & transformed data
+│   └── processed/              # train.csv / test.csv
+├── models/                     # preprocessor.joblib, logistic_regression.joblib, xgboost.joblib
 ├── notebooks/
-│   ├── 01_eda.ipynb           # Exploratory Data Analysis
-│   ├── 02_preprocessing.ipynb  # Data preprocessing
-│   ├── 03_baseline_model.ipynb # Logistic Regression baseline
-│   └── 04_improved_model.ipynb # XGBoost/Random Forest
-├── src/
-│   ├── data_preprocessing.py   # Data cleaning functions
-│   ├── feature_engineering.py  # Feature transformation
-│   ├── model_training.py       # Model training utilities
-│   └── evaluation.py           # Evaluation metrics
-├── models/                     # Saved trained models
-├── reports/                    # Generated reports & figures
+│   ├── 01_eda.ipynb            # Exploratory Data Analysis
+│   ├── 02_preprocessing.ipynb  # Data preprocessing pipeline
+│   ├── 03_modeling.ipynb       # Model training & evaluation
+│   └── 04_interpretation.ipynb # SHAP interpretation
+├── reports/
+│   └── figures/                # SHAP plots, architecture diagram
 ├── requirements.txt            # Python dependencies
 └── README.md                   # This file
 ```
 
-## Installation
+## Installation & Local Run
 
 ```bash
-# Clone or navigate to project directory
-cd churn-prediction
+# Clone the public repo (or navigate to churn-prediction/ in the full workspace)
+git clone https://github.com/snav9795/telco-churn-prediction.git
+cd telco-churn-prediction
 
-# Create virtual environment (recommended)
+# Create a virtual environment (recommended)
 python -m venv venv
-venv\Scripts\activate  # Windows
+venv\Scripts\activate        # Windows
+# source venv/bin/activate   # macOS / Linux
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Run the Streamlit app
+streamlit run app/Home.py
 ```
+
+The app will open at `http://localhost:8501`.
+
+## Deployment (Streamlit Community Cloud)
+
+1. Push `churn-prediction/` content to the public repo root (already configured via `git subtree push`).
+2. Go to [share.streamlit.io](https://share.streamlit.io) → **New app**.
+3. Select repo `snav9795/telco-churn-prediction`, branch `main`, main file `app/Home.py`.
+4. Choose Python 3.11 (matches local environment).
+5. Click **Deploy** — the app URL will be `https://telco-churn-prediction.streamlit.app`.
+
+## Reproducibility Checklist
+
+- [x] `requirements.txt` installs cleanly in a fresh venv
+- [x] `random_state=42` used for train/test split and all models
+- [x] Raw data path documented (`data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv`)
+- [x] Notebooks run top-to-bottom in order: `01_eda` → `02_preprocessing` → `03_modeling` → `04_interpretation`
+- [x] Streamlit run command: `streamlit run app/Home.py`
+- [x] Public app URL: <https://telco-churn-prediction.streamlit.app>
 
 ## Milestones
 

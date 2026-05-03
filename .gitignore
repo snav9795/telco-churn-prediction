@@ -6,18 +6,33 @@ __pycache__/
 venv/
 .venv/
 env/
+*.egg-info/
+dist/
+build/
 
 # Jupyter
 .ipynb_checkpoints/
+*.ipynb_checkpoints
 
 # OS / editor
 .DS_Store
 Thumbs.db
+desktop.ini
+.directory
 
 # Environment and secrets
 .env
 .env.*
+*.pem
+*.key
+secrets.toml
 
-# Models and large artifacts (uncomment if you do not want them in git)
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Models and large artifacts (uncomment to exclude from git)
 # churn-prediction/models/*.pkl
 # churn-prediction/models/*.joblib

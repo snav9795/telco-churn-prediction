@@ -2,6 +2,8 @@
 
 import streamlit as st
 
+from utils import load_artifacts
+
 st.set_page_config(
     page_title="Telco Churn Predictor",
     page_icon="📡",
@@ -43,3 +45,14 @@ st.markdown(
 )
 
 st.info("Use the sidebar on the left to navigate between pages.", icon="👈")
+
+with st.spinner("Loading model artifacts…"):
+    load_artifacts()
+
+st.success("Models loaded and ready.", icon="✅")
+
+st.divider()
+st.caption(
+    "CS5998 Capstone · Master of Data Science & AI · "
+    "Data: [IBM Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)"
+)

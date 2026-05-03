@@ -15,7 +15,8 @@ from utils import (
 st.set_page_config(page_title="Predict · Churn", page_icon="🔮", layout="wide")
 st.title("🔮 Single-Customer Prediction")
 
-preprocessor, lr, xgb = load_artifacts()
+with st.spinner("Loading model artifacts…"):
+    preprocessor, lr, xgb = load_artifacts()
 
 
 def build_input_row():
@@ -73,3 +74,6 @@ if st.button("Predict", type="primary"):
         st.pyplot(fig, bbox_inches="tight")
     elif show_shap and model_choice == "Logistic Regression":
         st.info("SHAP waterfall is available for XGBoost only in this app.")
+
+st.divider()
+st.caption("CS5998 Capstone · Master of Data Science & AI")

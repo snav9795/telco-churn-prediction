@@ -6,17 +6,24 @@ __pycache__/
 venv/
 .venv/
 env/
+*.egg-info/
+dist/
+build/
 
 # Jupyter
 .ipynb_checkpoints/
+*.ipynb_checkpoints
 
 # OS / editor
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Secrets (never commit)
 .env
 .env.*
+*.pem
+*.key
 
 # Streamlit
 .streamlit/secrets.toml

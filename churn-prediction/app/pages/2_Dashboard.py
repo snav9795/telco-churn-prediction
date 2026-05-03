@@ -20,8 +20,9 @@ from utils import load_artifacts, load_test_data
 st.set_page_config(page_title="Dashboard · Churn", page_icon="📊", layout="wide")
 st.title("📊 Model Performance Dashboard")
 
-preprocessor, lr, xgb = load_artifacts()
-test_df = load_test_data()
+with st.spinner("Loading models and test data…"):
+    preprocessor, lr, xgb = load_artifacts()
+    test_df = load_test_data()
 
 X_test = test_df.drop(columns=["Churn"]).values
 y_test = test_df["Churn"].values
@@ -96,3 +97,6 @@ fig_roc.update_layout(
     height=450,
 )
 st.plotly_chart(fig_roc, use_container_width=True)
+
+st.divider()
+st.caption("CS5998 Capstone · Master of Data Science & AI")
